@@ -1,6 +1,10 @@
 <template>
   <ul class="weather-list">
-    <WeatherItem v-for="city in targetCities" :key="city.name" :city="city" />
+    <WeatherItem
+      v-for="weather in weatherList"
+      :key="weather.code"
+      :weather="weather"
+    />
   </ul>
 </template>
 
@@ -12,7 +16,7 @@ export default {
     WeatherItem,
   },
   props: {
-    targetCities: Array,
+    weatherList: Array,
   },
 };
 </script>

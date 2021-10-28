@@ -3,7 +3,7 @@
     <ul class="city-selector">
       <li
         v-for="city in cities"
-        :key="city.name"
+        :key="city.code"
         :class="{ isSelected: city.selected }"
         @click="selectCity(city)"
       >
@@ -20,11 +20,12 @@ export default {
     cities: Array,
   },
   mounted() {
-    console.log(this.cities);
+    // console.log(this.cities);
   },
   methods: {
     selectCity(city) {
       city.selected = city.selected ? false : true;
+      this.$emit("setWeatherList", city);
     },
   },
 };
