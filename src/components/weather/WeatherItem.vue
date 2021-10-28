@@ -33,7 +33,8 @@ export default {
       return `${this.iconUrl}${this.weather.icon || "13d"}${this.iconExt}`;
     },
     requestUrl() {
-      return `${this.apiUrl}?q=${this.city.code}&appid=${this.appId}`;
+      const API_KEY = process.env.VUE_APP_API_KEY;
+      return `${this.apiUrl}?q=${this.city.code}&appid=${API_KEY}`;
     },
   },
   mounted() {
